@@ -1,6 +1,6 @@
 import psutil
 
-#psutil library is imported to fetch system information, such as CPU usage
+#psutil library is imported to fetch system information, like usge of CPU 
 #Install :- pip install psutil
 
 import time
