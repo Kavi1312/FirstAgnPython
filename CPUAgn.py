@@ -7,7 +7,6 @@ import time
 
 # Set the threshold (as 80%)
 
-
 threshold = 80
 
 print("Monitoring CPU usage...")

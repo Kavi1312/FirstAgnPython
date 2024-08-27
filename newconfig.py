@@ -18,7 +18,7 @@ def read_config(filename):
         raise FileNotFoundError(f"Config file '{filename}' not found")
 
 # Example usage:
-filename = "my_config.ini"
+filename = "config.ini"
 try:
     data = read_config(filename)
     print("Configuration data:", data)
@@ -26,15 +26,12 @@ except FileNotFoundError as e:
     print(e)
 
 
-
-
-
 import configparser
 
 def create_config():
     config = configparser.ConfigParser()
-    config['General'] = {'debug': True, 'log_level': 'info'}
-    config['Database'] = {'db_name': 'example_db', 'db_host': 'localhost', 'db_port': '5432'}
+    config['General'] = {'Debug': True, 'Log_level': 'Info'}
+    config['Database'] = {'Db_name': 'Example_db', 'Db_host': 'Localhost', 'Db_port': '5432'}
 
     with open('config.ini', 'w') as configfile:
         config.write(configfile)
@@ -43,29 +40,29 @@ if __name__ == "__main__":
     create_config()
 
 
-
-
-
-
 def read_config():
     config = configparser.ConfigParser()
     config.read('config.ini')
 
-    debug_mode = config.getboolean('General', 'debug')
-    log_level = config.get('General', 'log_level')
-    db_name = config.get('Database', 'db_name')
-    db_host = config.get('Database', 'db_host')
-    db_port = config.get('Database', 'db_port')
+    debug_mode = config.getboolean('General', 'Debug')
+    log_level = config.get('General', 'Log_level')
+    db_name = config.get('Database', 'Db_name')
+    db_host = config.get('Database', 'Db_host')
+    db_port = config.get('Database', 'Db_port')
 
     config_values = {
-        'debug_mode': debug_mode,
-        'log_level': log_level,
-        'db_name': db_name,
-        'db_host': db_host,
-        'db_port': db_port
+        'Debug_mode': debug_mode,
+        'Log_level': log_level,
+        'Db_name': db_name,
+        'Db_host': db_host,
+        'Db_port': db_port
     }
     return config_values
 
 if __name__ == "__main__":
     config_data = read_config()
-    print("Debug Mode:", config_data['debug_mode'])
+    print("Debug Mode:", config_data['Debug_mode'])
+    
+    # Display the configuration data one by one
+    for key, value in config_data.items():
+        print(f"{key}: {value}")
